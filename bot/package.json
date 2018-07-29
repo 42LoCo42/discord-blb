@@ -1,0 +1,14 @@
+{
+  "name": "discord-blb",
+  "version": "1.0.0",
+  "description": "A discord bot that writes your big words with big letters.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "42LoCo42",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
