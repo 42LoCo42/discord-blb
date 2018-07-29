@@ -36,4 +36,5 @@ It´s a bot that prints text with letter/number emojis, making it look bigger.
 
 ## Available Commands
 !blb <message> - Prints the message with BIG letters
+  
 !blbinfo - Prints some basic information about the bot.
