@@ -25,9 +25,15 @@ It´s a bot that prints text with letter/number emojis, making it look bigger.
 
 2.3. Download and unzip the current release of this repo to that folder
 
-2.4. Open a terminal there and run "npm install discord.js"
+2.4 Open the file "token.json" and write your name and your token in the designated fields
+
+2.5. Open a terminal there and run "npm install discord.js"
 
 ### 3. Run the bot
 3.1. Open a terminal in the bot´s folder
 
 3.2. Run "node ."
+
+## Available Commands
+!blb <message> - Prints the message with BIG letters
+!blbinfo - Prints some basic information about the bot.
