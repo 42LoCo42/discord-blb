@@ -1,9 +1,10 @@
 const config = require('./config.json');
-const { token } = require('./token.json');
+const token = require('./token.json');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
+	client.user.setAvatar('./blb.png');
 	console.log('BLB ready to speak big!');
 });
 
@@ -67,6 +68,7 @@ client.on('message', message => {
 		chat.send(config.bigName);
 		chat.send(client.user.displayAvatarURL);
 		chat.send(config.desc);
+		chat.send('BLB is currently maintained by ' + token.name);
 	}
 });
 
