@@ -2,6 +2,8 @@
 Big Letter Bot for Discord.
 It´s a bot that prints text with letter/number emojis, making it look bigger.
 
+![BLB example](https://github.com/42LoCo42/discord-blb/blob/master/example.png)
+
 ## How To install
 ### 1. Aquire a discord bot
 1.1. Open https://discordapp.com/developers/applications/ (login if neccessary)
