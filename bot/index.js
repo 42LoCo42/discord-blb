@@ -1,5 +1,5 @@
 const config = require('./config.json');
-const token = require('./token.json');
+const auth = require('./token.json');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -68,11 +68,11 @@ client.on('message', message => {
 		chat.send(config.bigName);
 		chat.send(client.user.displayAvatarURL);
 		chat.send(config.desc);
-		chat.send('BLB is currently maintained by ' + token.name);
+		chat.send('BLB is currently maintained by ' + auth.name);
 	}
 });
 
-client.login(token);
+client.login(auth.token);
 
 function matches(text, filter) {
 	let ret = false;
