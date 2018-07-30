@@ -6,11 +6,13 @@ It´s a bot that prints text with letter/number emojis, making it look bigger.
 
 ## How To install
 ### 1. Aquire a discord bot
-1.1. Open https://discordapp.com/developers/applications/ (login if neccessary)
+1.1. Open [My Applications](https://discordapp.com/developers/applications/ "Discord My Applications") (login if neccessary)
 
 1.2. Click "Create Application"
 
 1.3. Enter bot information (name, description etc.). You don´t need to upload an avatar, the bot does it automatically.
+
+1.3,5 Copy "Client ID" if you want to add the bot to a server in Step 3.1
 
 1.4. Click "Bot" on the left
 
@@ -30,6 +32,8 @@ It´s a bot that prints text with letter/number emojis, making it look bigger.
 2.5. Open a terminal there and run "npm install discord.js"
 
 ### 3. Run the bot
+3.1 To add the bot to a server, open https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID_HERE&scope=bot but replace CLIENT_ID_HERE with your Client ID from step 1.3,5
+
 3.1. Open a terminal in the bot´s folder
 
 3.2. Run "node ."
