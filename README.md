@@ -32,7 +32,7 @@ It´s a bot that prints text with letter/number emojis, making it look bigger.
 2.5. Open a terminal there and run "npm install discord.js"
 
 ### 3. Run the bot
-3.1 To add the bot to a server, open https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID_HERE&scope=bot but replace CLIENT_ID_HERE with your Client ID from step 1.3,5
+3.1 To add the bot to a server, open https://discordapp.com/oauth2/authorize?client_id=CLIENT_ID_HERE&scope=bot&permissions=10240 but replace CLIENT_ID_HERE with your Client ID from step 1.3,5
 
 3.1. Open a terminal in the bot´s folder
 
