@@ -21,46 +21,9 @@ client.on('message', message => {
 			message.reply('This command needs some text after it!');
 			return;
 		}
+		
 		const chars = args.split('');
-		let tmp;
-		let finalMsg = ' ';
-
-		for(const s in chars) {
-			if(chars[s] == ' ') {
-				tmp = '     ';
-			}
-			else if(chars[s] == '!') {
-				tmp = ':exclamation:';
-			}
-			else if(chars[s] == '?') {
-				tmp = ':question:';
-			}
-			else if(chars[s] == '.') {
-				tmp = '.          ';
-			}
-			else if(matches(chars[s], ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])) {
-				tmp = handleNumber(chars[s]);
-			}
-			else if(chars[s] == 'ä') {
-				tmp = ':regional_indicator_a: :regional_indicator_e:';
-			}
-			else if(chars[s] == 'ö') {
-				tmp = ':regional_indicator_o: :regional_indicator_e:';
-			}
-			else if(chars[s] == 'ü') {
-				tmp = ':regional_indicator_u: :regional_indicator_e:';
-			}
-			else if(chars[s] == 'ß') {
-				tmp = ':regional_indicator_s: :regional_indicator_s: ';
-			}
-			else if(matches(chars[s], ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'])) {
-				tmp = ':regional_indicator_' + chars[s] + ': ';
-			}
-			else {
-				tmp = config.errorIcon;
-			}
-			finalMsg = finalMsg.concat(tmp);
-		}
+		let finalMsg = handleChars(message.author.username.toLowerCase()) + ":   " + handleChars(chars);
 		message.channel.bulkDelete(1, true);
 		chat.send(finalMsg);
 	}
@@ -82,6 +45,49 @@ function matches(text, filter) {
 		}
 	}
 	return ret;
+}
+
+function handleChars(chars) {
+	let msg = '';
+	
+	for(const s in chars) {
+		if(chars[s] == ' ') {
+			tmp = '     ';
+		}
+		else if(chars[s] == '!') {
+			tmp = ':exclamation:';
+		}
+		else if(chars[s] == '?') {
+			tmp = ':question:';
+		}
+		else if(chars[s] == '.') {
+			tmp = '.          ';
+		}
+		else if(matches(chars[s], ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])) {
+			tmp = handleNumber(chars[s]);
+		}
+		else if(chars[s] == 'ä') {
+			tmp = ':regional_indicator_a: :regional_indicator_e:';
+		}
+		else if(chars[s] == 'ö') {
+			tmp = ':regional_indicator_o: :regional_indicator_e:';
+		}
+		else if(chars[s] == 'ü') {
+			tmp = ':regional_indicator_u: :regional_indicator_e:';
+		}
+		else if(chars[s] == 'ß') {
+			tmp = ':regional_indicator_s: :regional_indicator_s: ';
+		}
+		else if(matches(chars[s], ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'])) {
+			tmp = ':regional_indicator_' + chars[s] + ': ';
+		}
+		else {
+		tmp = config.errorIcon;
+		}
+		msg = msg.concat(tmp);
+	}
+	
+	return msg;
 }
 
 function handleNumber(text) {
